@@ -46,7 +46,7 @@ table, th, td {
         <th>{{$customer->email}}</th>
         <th>{{$customer->photo}}</th>
             <th class="mt-4 p-2 flex space-x-6">
-                <a href="/user/edit/{{$user->id}}">
+                <a href="/customer/edit/{{$customer->id}}">
                 <i class="fa-solid fa-pencil">Edit</i>
                 </a>
             </th>
@@ -57,6 +57,5 @@ table, th, td {
  </div>
 </div>
 </div>
- <!-- <div>{{$user}}</div> -->
 
  @endsection

@@ -9,11 +9,11 @@ use Illuminate\Validation\Rule;
 class CustomerController extends Controller
 {
     public function index () {
-return view('users.index', ['users' => Customer::all()]);
+return view('customers.index', ['customers' => Customer::all()]);
     }
 
     public function show (Customer $customer) {
-return view('customers.show', ['user' => $customer]);
+return view('customers.show', ['customer' => $customer]);
     }
 
     public function create() {
@@ -43,7 +43,7 @@ return redirect('/index')->with('message', 'Customer created successfully!');
     }
 
     public function edit(Customer $customer) {
-        return view('customers.edit', ['user' => $customer]);
+        return view('customers.edit', ['customer' => $customer]);
     }
 
     public function update(Request $request, Customer $customer) {
@@ -80,11 +80,11 @@ return redirect('/index')->with('message', 'Customer created successfully!');
 
     public function delete (Customer $customer) {
         $customer->delete();
-        return redirect('/index')->with('message', 'User deleted successfully');
+        return redirect('/index')->with('message', 'Customer deleted successfully');
     }
 
     public function destroy($customer) {
         Customer::where('id', $customer)->forceDelete();
-        return redirect('/index')->with('message', 'User destroied successfully');
+        return redirect('/index')->with('message', 'Customer destroied successfully');
     }
 }

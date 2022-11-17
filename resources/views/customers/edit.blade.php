@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Edit') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="submit/{{$user->id}}" enctype="multipart/form-data" novalidate>
+                    <form method="POST" action="submit/{{$customer->id}}" enctype="multipart/form-data" novalidate>
                         @csrf
                         @method('PUT')
                         <div class="row mb-3">

@@ -51,7 +51,7 @@ table, th, td {
         <th>{{$customer->email}}</th>
         <th>{{$customer->photo}}</th>
 <th class="mt-4 p-2 flex space-x-6">
-    <form method="POST" action="user/destroy/submit/{{$customer->id}}">
+    <form method="POST" action="customer/destroy/submit/{{$customer->id}}">
         @csrf
         @method('POST')
         <button class="text-red-500"><i class="fa-solid fa-trash"></i>Destroy</button>

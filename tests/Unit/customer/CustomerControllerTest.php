@@ -54,7 +54,7 @@ final class CustomerControllerTest extends TestCase
 
     public function testCreate(): void
     {
-        $this->get('/user/new')
+        $this->get('/customer/new')
             ->assertStatus(200);
     }
     
@@ -76,21 +76,21 @@ final class CustomerControllerTest extends TestCase
     public function testEdit(): void
     {
         $randomId = rand(0,10);
-        $this->get('/user/edit/'.$randomId)
+        $this->get('/customer/edit/'.$randomId)
             ->assertStatus(200);
     }
 
     public function testUpdate(): void
     {
         $randomId = rand(0,10);
-        $this->put('/user/edit/submit/'.$randomId, [ /* data */ ])
+        $this->put('/customer/edit/submit/'.$randomId, [ /* data */ ])
             ->assertStatus(302);
     }
 
     public function testDelete(): void
     {
         $randomId = rand(0,10);
-        $this->delete('/user/delete/submit/'.$randomId)
+        $this->delete('/customer/delete/submit/'.$randomId)
             ->assertStatus(302);
     }
 

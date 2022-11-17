@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
 table, th, td {
+    
   border: 1px solid black;
   border-collapse: collapse;
 }
@@ -18,7 +19,7 @@ table, th, td {
 <p class="text-center">Centered nav:</p>
   <ul class="nav justify-content-center">
     <li class="nav-item">
-      <a class="nav-link" href="/user/new" class="btn btn-info btn-lg">
+      <a class="nav-link" href="/customer/new" class="btn btn-info btn-lg">
                   <span class="glyphicon glyphicon-plus"></span> Create </a>
     </li>
     <li class="nav-item">
@@ -30,10 +31,8 @@ table, th, td {
 <table>
     <thead>
         <tr>
-            <th>#Photo#</th>
-            <th>- id </th>
-            <th>Added On</th>
-            <th>Last Update</th>
+            <th>#</th>
+            <th> id </th>
             <th>Company Name</th>
             <th>Street</th>
             <th>Street Nr</th>
@@ -42,6 +41,8 @@ table, th, td {
             <th>Contatct Person</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>Added On</th>
+            <th>Last Update</th>
         </tr>
 
     @foreach($customers as $customer)
@@ -52,8 +53,6 @@ table, th, td {
         </th>
         <th>{{$customer->photo}}</th>
         <th>{{$customer->id}}</th>
-        <th>{{$customer->created_at}}</th>
-        <th>{{$customer->updated_at}}</th>
         <th>{{$customer->company_name}}</th>
         <th>{{$customer->street}}</th>
         <th>{{$customer->street_nr}}</th>
@@ -61,24 +60,26 @@ table, th, td {
         <th>{{$customer->city}}</th>
         <th>{{$customer->contact_person}}</th>
         <th>{{$customer->email}}</th>
-        <th>{{$customer->photo}}</th>
+        <th>{{$customer->phone}}</th>
+        <th>{{$customer->created_at}}</th>
+        <th>{{$customer->updated_at}}</th>
         <th class="mt-4 p-2 flex space-x-6">
                 <a href="/customer/edit/{{$customer->id}}">
                 <i class="fa-solid fa-pencil">Edit</i>
                 </a>
             
-            <form method="POST" action="user/delete/submit/{{$user->id}}">
+            <form method="POST" action="customer/delete/submit/{{$customer->id}}">
                 @csrf
                 @method('DELETE')
                 <button class="text-red-500"><i class="fa-solid fa-trash"></i>Delete</button>
             </form>    
          
-            <form method="GET" action="/show/{{$user->id}}">
+            <form method="GET" action="/show/{{$customer->id}}">
                 <button class="text-red-500"><i class="fa-solid fa-eye"></i>Show</button>
             </form>
             </th>
             <th>
-            <form method="POST" action="user/destroy/submit/{{$user->id}}">
+            <form method="POST" action="customer/destroy/submit/{{$customer->id}}">
                 @csrf
                 @method('POST')
                 <button class="text-red-500"><i class="fa-solid fa-trash"></i>Destroy</button>
