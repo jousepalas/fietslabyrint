@@ -52,8 +52,8 @@ table, th, td {
         </th>
         <th>{{$customer->photo}}</th>
         <th>{{$customer->id}}</th>
-        <th>{{$customer->added_on}}</th>
-        <th>{{$customer->last_update}}</th>
+        <th>{{$customer->created_at}}</th>
+        <th>{{$customer->updated_at}}</th>
         <th>{{$customer->company_name}}</th>
         <th>{{$customer->street}}</th>
         <th>{{$customer->street_nr}}</th>

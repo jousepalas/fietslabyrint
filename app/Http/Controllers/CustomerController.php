@@ -23,8 +23,6 @@ return view('customers.show', ['user' => $customer]);
     public function store(Request $request) {
 // dd($request);
 $formFields = $request->validate([
-    'added_on' =>'required',
-    'last_update' =>'required',
     'company_name' =>'required',
     'street' =>'required',
     'street_nr' =>'required',
@@ -50,8 +48,6 @@ return redirect('/index')->with('message', 'Customer created successfully!');
 
     public function update(Request $request, Customer $customer) {
         $formFields = $request->validate([
-            'added_on' =>'sometimes',
-            'last_update' =>'sometimes',
             'company_name' =>'sometimes',
             'street' =>'sometimes',
             'street_nr' =>'sometimes',

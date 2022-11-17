@@ -15,8 +15,6 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('added_on');
-            $table->timestamp('last_update');
             $table->string('company_name', 100)->collation('latin1_general_ci');
             $table->string('street', 100)->collation('latin1_general_ci');
             $table->string('street_nr', 20)->collation('latin1_general_ci');
