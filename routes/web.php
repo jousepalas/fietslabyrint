@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\UserController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
@@ -20,24 +20,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', [ClientController::class, 'index'])->middleware('auth');
-Route::get('/show/{user}', [ClientController::class, 'show'])->middleware('auth');
-Route::get('/user/new', [ClientController::class, 'create'])->middleware('auth');
-Route::post('/store', [ClientController::class, 'store'])->middleware('auth');
+Route::get('/index', [CustomerController::class, 'index'])->middleware('auth');
+Route::get('/show/{customer}', [CustomerController::class, 'show'])->middleware('auth');
+Route::get('/customer/new', [CustomerController::class, 'create'])->middleware('auth');
+Route::post('/store', [CustomerController::class, 'store'])->middleware('auth');
 //create
 //store - store new
 //edit
-Route::get('user/edit/{user}', [ClientController::class, 'edit'])->middleware('auth');
+Route::get('customer/edit/{customer}', [CustomerController::class, 'edit'])->middleware('auth');
 //update
-Route::put('user/edit/submit/{user}', [ClientController::class, 'update'])->middleware('auth');
+Route::put('customer/edit/submit/{customer}', [CustomerController::class, 'update'])->middleware('auth');
 //soft delete
-Route::delete('user/delete/submit/{user}', [ClientController::class, 'delete'])->middleware('auth');
+Route::delete('customer/delete/submit/{customer}', [CustomerController::class, 'delete'])->middleware('auth');
 //destroy
-Route::post('user/destroy/submit/{user}', [ClientController::class, 'destroy'])->middleware('auth');
+Route::post('customer/destroy/submit/{customer}', [CustomerController::class, 'destroy'])->middleware('auth');
 //show soft delete
-Route::get('/softDeleted', [ClientController::class, 'showDeleted'])->middleware('auth');
+Route::get('/softDeleted', [CustomerController::class, 'showDeleted'])->middleware('auth');
 //restore client
-Route::get('/restoreClient/{user}', [ClientController::class, 'restoreClient'])->middleware('auth');
+Route::get('/restoreClient/{customer}', [CustomerController::class, 'restoreClient'])->middleware('auth');
 
 //Admin routes
 //Register

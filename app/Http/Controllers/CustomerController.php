@@ -6,7 +6,7 @@ use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
-class CutomerController extends Controller
+class CustomerController extends Controller
 {
     public function index () {
 return view('users.index', ['users' => Customer::all()]);

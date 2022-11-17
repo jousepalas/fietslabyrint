@@ -1,5 +1,5 @@
 {
-    "name": "fietslabyrint/assessment/laravel",
+    "name": "fietslabyrint/laravel",
     "type": "project",
     "description": "Fietslabyrint Assessment",
     "keywords": ["framework", "laravel"],

@@ -4,19 +4,19 @@ namespace Tests\Feature\Http\Controllers;
 
 use Tests\TestCase;
 use Illuminate\Support\Str;
-use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CustomerController;
 
 // global $randomId;
 
 
 /**
- * Class ClientControllerTest.
+ * Class CustomerControllerTest.
  *
- * @covers \App\Http\Controllers\ClientController
+ * @covers \App\Http\Controllers\CustomerController
  */
-final class ClientControllerTest extends TestCase
+final class CustomerControllerTest extends TestCase
 {
-    private ClientController $clientController;
+    private CustomerController $clientController;
 
     /**
      * {@inheritdoc}
@@ -25,8 +25,8 @@ final class ClientControllerTest extends TestCase
     {
         parent::setUp();
         
-        $this->clientController = new ClientController();
-        $this->app->instance(ClientController::class, $this->clientController);
+        $this->clientController = new CustomerController();
+        $this->app->instance(CustomerController::class, $this->clientController);
     }
 
     /**
