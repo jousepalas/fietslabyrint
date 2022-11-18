@@ -58,7 +58,9 @@ table, th, td {
         <button class="text-red-500"><i class="fa-solid fa-trash"></i>Destroy</button>
     </form>    
 
-    <form method="GET" action="/restoreClient/{{$customer->id}}">
+    <form method="POST" action="customer/restore/{{$customer->id}}">
+    @csrf
+    @method('POST')
             <button class="text-green-500"><span>&#9842;</span> Restore</button>
             </form>
 </th>

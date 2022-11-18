@@ -65,16 +65,17 @@ return redirect('/index')->with('message', 'Customer created successfully!');
             }
 
             $customer->update($formFields);
-            return redirect('/index')->with('message', 'User updated successfully!');    
+            return redirect('/index')->with('message', 'Customer updated successfully!');    
     }
 
     public function showDeleted () {
         return view('customers.showDeleted', ['customers' => Customer::onlyTrashed()->get()]);
     }
 
-    public function restoreCustomer (Customer $customer) {
+    public function restoreCustomer ( $customer) {
         Customer::where('id', $customer)->restore();
-        return view('customers.showDeleted', ['customers' => Customer::onlyTrashed()->get()]);
+        // return view('customers.showDeleted', ['customers' => Customer::onlyTrashed()->get()]);
+        return redirect('/softDeleted')->with('message', 'Customer restore successfully!');
     }
 
     public function delete (Customer $customer) {
