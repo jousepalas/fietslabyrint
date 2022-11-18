@@ -18,6 +18,7 @@ table, th, td {
     <table>
         <thead>
             <tr>
+                <th></th>
             <th>#Photo#</th>
             <th>- id </th>
             <th>Added On</th>
@@ -70,7 +71,16 @@ table, th, td {
 </table>
 
 </div>
+
 </div>
+
 </div>
+<div class="col-md-6 offset-md-4">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="/index">Back </a>
+    </li>
+  </ul>
+        </div>
 @endsection
 

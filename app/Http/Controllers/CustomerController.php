@@ -54,7 +54,6 @@ return redirect('/index')->with('message', 'Customer created successfully!');
             'zip' =>'sometimes',
             'city' =>'sometimes',
             'contact_person' =>'sometimes',
-            'email' => ['sometimes', 'email', Rule::unique('customers', 'email')],
             'phone' =>'sometimes',
             'photo' =>'sometimes',
        ]);
@@ -73,7 +72,7 @@ return redirect('/index')->with('message', 'Customer created successfully!');
         return view('customers.showDeleted', ['customers' => Customer::onlyTrashed()->get()]);
     }
 
-    public function restoreCustomer ($customer) {
+    public function restoreCustomer (Customer $customer) {
         Customer::where('id', $customer)->restore();
         return view('customers.showDeleted', ['customers' => Customer::onlyTrashed()->get()]);
     }

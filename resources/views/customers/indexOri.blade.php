@@ -1,10 +1,22 @@
-<x-layout>
+
+@extends('layouts.app')
+
+@section('content')
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+table, th, td {
+    
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+
 <div class="container">
     <div class="row justify-content-center">
       
 <h1>Customers List</h1>
 <div class="col-md-6 offset-md-4">
-<p class="text-center">Sub Menu</p>
+<p class="text-center">Centered nav:</p>
   <ul class="nav justify-content-center">
     <li class="nav-item">
       <a class="nav-link" href="/customer/new" class="btn btn-info btn-lg">
@@ -42,6 +54,7 @@
         <img src={{$customer->photo ? asset('storage/' . $customer->photo) :
     asset('storage/photos/no-image.jpg')}} width="70" height="70"/>
         </th>
+        <th>{{$customer->photo}}</th>
         <th>{{$customer->id}}</th>
         <th>{{$customer->company_name}}</th>
         <th>{{$customer->street}}</th>
@@ -65,7 +78,7 @@
             </form>    
          
             <form method="GET" action="/show/{{$customer->id}}">
-                <button class="text-blue-500"><i class="fa-solid fa-eye"></i>Show</button>
+                <button class="text-red-500"><i class="fa-solid fa-eye"></i>Show</button>
             </form>
             </th>
             <th>
@@ -87,7 +100,6 @@
  </div>
  </div>
  </div>
-     
-</x-layout>
+ @endsection
 
-
+ 

@@ -24,7 +24,7 @@
 <div id="app">
 <nav class="flex justify-between items-center mb-4">
 
-    <a href="/"><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo" /></a>
+    <a href="/"><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo" width="70" height="70" /></a>
     <ul class="flex space-x-6 mr-6 text-lg">
       @auth
       <li>
@@ -64,13 +64,6 @@
 
   <x-flash-message />
 
-  <div class="col-md-6 offset-md-4">
-  <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link" href="/index">Back </a>
-    </li>
-  </ul>
-        </div>
   </div>
 </body>
 </html>

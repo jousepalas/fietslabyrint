@@ -37,7 +37,7 @@ Route::post('customer/destroy/submit/{customer}', [CustomerController::class, 'd
 //show soft delete
 Route::get('/softDeleted', [CustomerController::class, 'showDeleted'])->middleware('auth');
 //restore client
-Route::get('/restoreClient/{customer}', [CustomerController::class, 'restoreClient'])->middleware('auth');
+Route::get('/restoreClient/{customer}', [CustomerController::class, 'restoreCustomer'])->middleware('auth');
 
 //Admin routes
 //Register

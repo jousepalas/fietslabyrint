@@ -15,7 +15,7 @@
                             <label for="company_name" class="col-md-4 col-form-label text-md-end">{{ __('Comapny Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('company_name') is-invalid @enderror" name="company_name" value="{{ old('company_name') }}" required autocomplete="company_name" autofocus>
+                                <input id="name" type="text" class="form-control @error('company_name') is-invalid @enderror" name="company_name" value="{{ $customer->company_name }}" required autocomplete="company_name" autofocus>
 
                                 @error('company_name')
                                     <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="street" class="col-md-4 col-form-label text-md-end">{{ __('Street') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ old('street') }}" required autocomplete="street" autofocus>
+                                <input id="name" type="text" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ $customer->street }}" required autocomplete="street" autofocus>
 
                                 @error('street')
                                     <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                             <label for="street_nr" class="col-md-4 col-form-label text-md-end">{{ __('Street nr') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('street_nr') is-invalid @enderror" name="street_nr" value="{{ old('street_nr') }}" required autocomplete="street_nr" autofocus>
+                                <input id="name" type="text" class="form-control @error('street_nr') is-invalid @enderror" name="street_nr" value="{{ $customer->street_nr }}" required autocomplete="street_nr" autofocus>
 
                                 @error('street_nr')
                                     <span class="invalid-feedback" role="alert">
@@ -57,7 +57,7 @@
                             <label for="zip" class="col-md-4 col-form-label text-md-end">{{ __('Zip') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('zip') is-invalid @enderror" name="zip" value="{{ old('zip') }}" required autocomplete="zip" autofocus>
+                                <input id="name" type="text" class="form-control @error('zip') is-invalid @enderror" name="zip" value="{{ $customer->zip }}" required autocomplete="zip" autofocus>
 
                                 @error('zip')
                                     <span class="invalid-feedback" role="alert">
@@ -71,7 +71,7 @@
                             <label for="city" class="col-md-4 col-form-label text-md-end">{{ __('City') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ old('city') }}" required autocomplete="city" autofocus>
+                                <input id="name" type="text" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ $customer->city }}" required autocomplete="city" autofocus>
 
                                 @error('city')
                                     <span class="invalid-feedback" role="alert">
@@ -85,23 +85,9 @@
                             <label for="contact_person" class="col-md-4 col-form-label text-md-end">{{ __('Contact Person') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('contact_person') is-invalid @enderror" name="contact_person" value="{{ old('contact_person') }}" required autocomplete="contact_person" autofocus>
+                                <input id="name" type="text" class="form-control @error('contact_person') is-invalid @enderror" name="contact_person" value="{{ $customer->contact_person }}" required autocomplete="contact_person" autofocus>
 
                                 @error('contact_person')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -113,7 +99,7 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" required autocomplete="new-phone">
+                                <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value= "{{ $customer->phone }}" required autocomplete="new-phone">
 
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
@@ -145,4 +131,12 @@
         </div>
     </div>
 </div>
+
+<div class="col-md-6 offset-md-4">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="/index">Back </a>
+    </li>
+  </ul>
+        </div>
 @endsection
