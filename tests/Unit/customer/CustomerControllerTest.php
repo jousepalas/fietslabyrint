@@ -42,20 +42,20 @@ final class CustomerControllerTest extends TestCase
     public function testIndex(): void
     {
         $this->get('/index')
-            ->assertStatus(200);
+            ->assertStatus(302);
     }
 
     public function testShow(): void
     {
         $randomId = rand(0,10);
         $this->get('/show/'.$randomId)
-            ->assertStatus(200);
+            ->assertStatus(302);
     }
 
     public function testCreate(): void
     {
         $this->get('/customer/new')
-            ->assertStatus(200);
+            ->assertStatus(302);
     }
     
     public function testStore(): void
@@ -77,7 +77,7 @@ final class CustomerControllerTest extends TestCase
     {
         $randomId = rand(0,10);
         $this->get('/customer/edit/'.$randomId)
-            ->assertStatus(200);
+            ->assertStatus(302);
     }
 
     public function testUpdate(): void
