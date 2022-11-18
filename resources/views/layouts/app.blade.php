@@ -33,7 +33,7 @@
         </span>
       </li>
       <li>
-        <a href="/index" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Manage Users</a>
+        <a href="/index" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Manage Customers</a>
       </li>
       <li>
         <form class="inline" method="POST" action="/logout">
